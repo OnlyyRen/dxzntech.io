@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071228;--muted:#9fb0c8}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Space Grotesk',sans-serif;background:linear-gradient(180deg,#041020,#071228);color:#eaf2ff;padding:18px}
+.container{max-width:980px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03);transition:transform .2s, box-shadow .2s;transform-style:preserve-3d}
+.card:hover{box-shadow:0 18px 40px rgba(2,6,23,0.5)}
+.card h3{margin:0 0 8px}
+.card p{color:var(--muted);margin:0}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>Portofolio</h2>
+    <div class="grid">
+      <div class="card"><h3>Project A</h3><p>Web sederhana & dokumentasi</p></div>
+      <div class="card"><h3>Coming Soon</h3><p>Nanti aja gaes isinya</p></div>
+    </div>
+  </div>
+<script>
+// tilt effect
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const rect=card.getBoundingClientRect();
+    const x=e.clientX-rect.left;
+    const y=e.clientY-rect.top;
+    const centerX=rect.width/2;
+    const centerY=rect.height/2;
+    const rotateX=((y-centerY)/centerY)*5;
+    const rotateY=((x-centerX)/centerX)*-5;
+    card.style.transform=`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform='rotateX(0) rotateY(0)';
+  });
+});
+</script>
+</body>
+</html>

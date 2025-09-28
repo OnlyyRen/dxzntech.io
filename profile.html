@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#071228;
+  --neon1:#06b6d4;
+  --neon2:#7c3aed;
+  --muted:#a9bfd0;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Space Grotesk',sans-serif;
+  color:#eaf2ff;
+  background:linear-gradient(180deg,#041020,#071228);
+  padding:18px;
+}
+.container{
+  max-width:980px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding:18px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+.header{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+.avatar{
+  width:160px;height:160px;
+  border-radius:14px;
+  overflow:hidden;
+  border:3px solid rgba(255,255,255,0.03);
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.meta h1{margin:0;font-size:1.6rem}
+.meta p{color:var(--muted);margin:6px 0 0}
+.chips{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  background:linear-gradient(90deg, rgba(124,58,237,0.08), rgba(6,182,212,0.04));
+  font-weight:700;
+  font-size:13px;
+}
+.button{
+  display:inline-block;
+  margin-top:12px;
+  padding:8px 12px;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--neon1),var(--neon2));
+  color:#021026;
+  font-weight:700;
+  text-decoration:none;
+}
+h3,h4{margin-top:0}
+.muted{color:var(--muted);font-size:14px}
+.skillbar{
+  background:rgba(255,255,255,0.04);
+  height:12px;
+  border-radius:999px;
+  overflow:hidden;
+}
+.skillbar span{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--neon2),var(--neon1));
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="card header">
+      <div class="avatar"><img src="images/Profile-gweh.png" alt="Andra"></div>
+      <div class="meta">
+        <h1>Muhammad Deandra Sehsanyoto</h1>
+        <p>Pelajar • Network Support • Programmer pemula</p>
+        <div class="chips">
+          <div class="chip">TKJ</div>
+          <div class="chip">Networking</div>
+          <div class="chip">Programming</div>
+          <div class="chip">Weebs</div>
+          <div class="chip">Figure Collector</div>
+        </div>
+        <a href="https://smkn8malang.sch.id/" target="_blank" class="button">School</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Bio</h3>
+      <p>Halo, aku <strong>Deandra</strong> dan biasa dipanggil dengan sebutan <strong>Andra</strong> atau <strong>Dean</strong> oleh teman offline maupun onlineku. Aku adalah seorang pelajar dari
+        <a href="https://smkn8malang.sch.id/" target="_blank">SMKN 8 Malang</a>.</p>
+      <h4>Hobi</h4>
+      <p>Game, anime, figure collecting, musik (Harum Manis, Deftones, BMTH).</p>
+    </div>
+
+    <div class="card">
+      <h3>Skill</h3>
+      <p class="muted">Progress belajar (perkiraan)</p>
+      <div style="margin-top:8px">
+        <div style="font-weight:700;margin-bottom:6px">Networking</div>
+        <div class="skillbar"><span style="width:43%"></span></div>
+        <div style="height:12px"></div>
+        <div style="font-weight:700;margin-bottom:6px">Programming</div>
+        <div class="skillbar"><span style="width:25%"></span></div>
+      </div>
+      <h4 style="margin-top:16px">Tools Favorit</h4>
+      <p class="muted">Linux, Python, HTML, VSCode</p>
+    </div>
+  </div>
+</body>
+</html>
